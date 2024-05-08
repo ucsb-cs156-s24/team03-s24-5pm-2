@@ -60,7 +60,7 @@ describe("Articles tests", () => {
         fireEvent.change(dateAddedField, { target: { value: 'bad-input' } });
         fireEvent.click(submitButton);
 
-        await screen.findByText(/Title doesn't exist./);
+        await screen.findByText(/Date Added is required./);
     });
 
     test("Correct Error messsages on missing input", async () => {
@@ -111,7 +111,7 @@ describe("Articles tests", () => {
         await waitFor(() => expect(mockSubmitAction).toHaveBeenCalled());
 
         expect(screen.queryByText(/Title is required./)).not.toBeInTheDocument();
-        expect(screen.queryByText(/Date Added must be in ISO format./)).not.toBeInTheDocument();
+        expect(screen.queryByText(/Date Added is required./)).not.toBeInTheDocument();
 
     });
 
