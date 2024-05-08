@@ -94,7 +94,7 @@ function RecommendationRequestForm({ initialContents, submitAction, buttonLabel 
                             })}
                         />
                         <Form.Control.Feedback type="invalid">
-                            {errors.professorEmail?.message}
+                            {errors.explanation?.message}
                         </Form.Control.Feedback>
                     </Form.Group>
                 </Col>

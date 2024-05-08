@@ -66,6 +66,7 @@ describe("RecommendationRequestForm tests", () => {
 
         await screen.findByText(/Requester Email is not a valid email./);
         await screen.findByText(/Professor Email is not a valid email./);
+        await screen.findByText(/Explanation is required./);
         await screen.findByText(/Date Requested is required./);
         await screen.findByText(/Date Needed is required./);
     });
@@ -84,6 +85,7 @@ describe("RecommendationRequestForm tests", () => {
 
         await screen.findByText(/Requester Email is not a valid email./);
         expect(screen.getByText(/Professor Email is not a valid email./)).toBeInTheDocument();
+        expect(screen.getByText(/Explanation is required./)).toBeInTheDocument();
         expect(screen.getByText(/Date Requested is required./)).toBeInTheDocument();
         expect(screen.getByText(/Date Needed is required./)).toBeInTheDocument();
 
@@ -100,14 +102,15 @@ describe("RecommendationRequestForm tests", () => {
         await screen.findByTestId("RecommendationRequestForm-requesterEmail");
         const requesterEmailField = screen.getByTestId("RecommendationRequestForm-requesterEmail");
         const professorEmailField = screen.getByTestId("RecommendationRequestForm-professorEmail");
+        const explanationField = screen.getByTestId("RecommendationRequestForm-explanation");
         const dateRequestedField = screen.getByTestId("RecommendationRequestForm-dateRequested");
         const dateNeededField = screen.getByTestId("RecommendationRequestForm-dateNeeded"); 
         // done button not tested
         const submitButton = screen.getByTestId("RecommendationRequestForm-submit");
-        await waitFor(() => expect(submitButton).toBeInTheDocument());
 
         fireEvent.change(requesterEmailField, { target: { value: 'sdjfsakljfkdslajfYYldj@gmail.com' } });
         fireEvent.change(professorEmailField, { target: { value: 'sfdskjflsdjkf43jhbvcjxA@email.com' } });
+        fireEvent.change(explanationField, { target: { value: 'chesafds               sad-asd______DSad21334578udfsi' } });
         fireEvent.change(dateRequestedField, { target: { value: '2022-01-02T12:00' } });
         fireEvent.change(dateNeededField, { target: { value: '2022-01-02T12:00' } });
         fireEvent.click(submitButton);
@@ -116,6 +119,7 @@ describe("RecommendationRequestForm tests", () => {
 
         expect(screen.queryByText(/Requester Email is not a valid email./)).not.toBeInTheDocument();
         expect(screen.queryByText(/Professor Email is not a valid email./)).not.toBeInTheDocument();
+        expect(screen.queryByText(/Explanation is required./)).not.toBeInTheDocument();
         expect(screen.queryByText(/Date Requested is required./)).not.toBeInTheDocument();
         expect(screen.queryByText(/Date Needed is required./)).not.toBeInTheDocument();
 
