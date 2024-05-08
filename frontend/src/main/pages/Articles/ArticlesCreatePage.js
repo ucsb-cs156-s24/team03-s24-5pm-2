@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 export default function ArticlesCreatePage({storybook=false}) {
 
   const objectToAxiosParams = (articles) => ({
-    url: "/api/Articles/post",
+    url: "/api/articles/post",
     method: "POST",
     params: {
       title: articles.title,
@@ -26,7 +26,7 @@ export default function ArticlesCreatePage({storybook=false}) {
     objectToAxiosParams,
      { onSuccess }, 
      // Stryker disable next-line all : hard to set up test for caching
-     ["/api/Articles/all"]
+     ["/api/articles/all"]
      );
 
   const { isSuccess } = mutation
@@ -36,7 +36,7 @@ export default function ArticlesCreatePage({storybook=false}) {
   }
 
   if (isSuccess && !storybook) {
-    return <Navigate to="/Articles" />
+    return <Navigate to="/articles" />
   }
 
   return (
