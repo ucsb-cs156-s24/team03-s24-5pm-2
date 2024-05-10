@@ -41,7 +41,7 @@ describe("UCSBDiningCommonsMenuItemForm tests", () => {
         render(
             <QueryClientProvider client={queryClient}>
                 <Router>
-                    <UCSBDiningCommonsMenuItemForm initialContents={ucsbDiningCommonsMenuItemsFixtures.oneMenuItem} />
+                    <UCSBDiningCommonsMenuItemForm initialContents={ucsbDiningCommonsMenuItemsFixtures.oneDiningCommonsMenuItem} />
                 </Router>
             </QueryClientProvider>
         );
