@@ -94,7 +94,15 @@ describe("OrganizationForm tests", () => {
         expect(screen.getByText(/inactive is required./)).toBeInTheDocument();
 
         const nameInput = screen.getByTestId(`${testId}-orgCode`);
+        const orgTranslationInput = screen.getByTestId(`${testId}-orgTranslation`);
+        const orgTranslationShortInput = screen.getByTestId(`${testId}-orgTranslationShort`);
+        const inactiveInput = screen.getByTestId(`${testId}-inactive`);
+        const submitInput = screen.getByTestId(`${testId}-submit`);
         fireEvent.change(nameInput, { target: { value: ""} });
+        fireEvent.change(orgTranslationInput, { target: { value: ""} });
+        fireEvent.change(orgTranslationShortInput, { target: { value: ""} });
+        fireEvent.change(inactiveInput, { target: { value: ""} });
+        fireEvent.change(submitInput, { target: { value: ""} });
         fireEvent.click(submitButton);
 
         await waitFor(() => {
