@@ -1,5 +1,5 @@
 import React from 'react';
-import UCSBDiningCommonsMenuItemForm from "main/components/UCSBDiningCommonsMenuItem/UCSBDiningCommonsMenuItemForm";
+import UCSBDiningCommonsMenuItemForm from "main/components/UCSBDiningCommonsMenuItems/UCSBDiningCommonsMenuItemForm";
 import {ucsbDiningCommonsMenuItemsFixtures} from "fixtures/ucsbDiningCommonsMenuItemsFixtures";
 
 export default {
