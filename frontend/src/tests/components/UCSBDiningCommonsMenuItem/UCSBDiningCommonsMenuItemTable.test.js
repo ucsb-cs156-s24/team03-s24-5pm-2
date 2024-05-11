@@ -1,5 +1,5 @@
 import { fireEvent, render, waitFor, screen } from "@testing-library/react";
-import { ucsbDiningCommonsMenuItemFixtures } from "fixtures/ucsbDiningCommonsMenuItemFixtures";
+import { ucsbDiningCommonsMenuItemsFixtures } from "fixtures/ucsbDiningCommonsMenuItemsFixtures";
 import UCSBDiningCommonsMenuItemTable from "main/components/UCSBDiningCommonsMenuItems/UCSBDiningCommonsMenuItemTable";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { MemoryRouter } from "react-router-dom";
@@ -54,7 +54,7 @@ describe("UCSBDiningCommonsMenuItemTable tests", () => {
     render(
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
-          <UCSBDiningCommonsMenuItemTable menuItems={ucsbDiningCommonsMenuItemFixtures.threeDiningCommonsMenuItems} currentUser={currentUser} />
+          <UCSBDiningCommonsMenuItemTable menuItems={ucsbDiningCommonsMenuItemsFixtures.threeDiningCommonsMenuItems} currentUser={currentUser} />
         </MemoryRouter>
       </QueryClientProvider>
     );
@@ -98,7 +98,7 @@ describe("UCSBDiningCommonsMenuItemTable tests", () => {
     render(
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
-          <UCSBDiningCommonsMenuItemTable  menuItems={ucsbDiningCommonsMenuItemFixtures.threeDiningCommonsMenuItems} currentUser={currentUser} />
+          <UCSBDiningCommonsMenuItemTable  menuItems={ucsbDiningCommonsMenuItemsFixtures.threeDiningCommonsMenuItems} currentUser={currentUser} />
         </MemoryRouter>
       </QueryClientProvider>
     );
@@ -137,7 +137,7 @@ describe("UCSBDiningCommonsMenuItemTable tests", () => {
     render(
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
-          <UCSBDiningCommonsMenuItemTable menuItems={ucsbDiningCommonsMenuItemFixtures.threeDiningCommonsMenuItems} currentUser={currentUser} />
+          <UCSBDiningCommonsMenuItemTable menuItems={ucsbDiningCommonsMenuItemsFixtures.threeDiningCommonsMenuItems} currentUser={currentUser} />
         </MemoryRouter>
       </QueryClientProvider>
     );
@@ -167,7 +167,7 @@ describe("UCSBDiningCommonsMenuItemTable tests", () => {
     render(
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
-          <UCSBDiningCommonsMenuItemTable menuItems={ucsbDiningCommonsMenuItemFixtures.threeDiningCommonsMenuItems} currentUser={currentUser} />
+          <UCSBDiningCommonsMenuItemTable menuItems={ucsbDiningCommonsMenuItemsFixtures.threeDiningCommonsMenuItems} currentUser={currentUser} />
         </MemoryRouter>
       </QueryClientProvider>
     );

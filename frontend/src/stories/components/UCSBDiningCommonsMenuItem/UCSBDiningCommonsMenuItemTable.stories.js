@@ -1,6 +1,6 @@
 import React from 'react';
 import UCSBDiningCommonsMenuItemTable from 'main/components/UCSBDiningCommonsMenuItems/UCSBDiningCommonsMenuItemTable';
-import { ucsbDiningCommonsMenuItemFixtures } from 'fixtures/ucsbDiningCommonsMenuItemFixtures';
+import { ucsbDiningCommonsMenuItemsFixtures } from 'fixtures/ucsbDiningCommonsMenuItemsFixtures';
 import { currentUserFixtures } from 'fixtures/currentUserFixtures';
 import { rest } from "msw";
 
@@ -24,13 +24,13 @@ Empty.args = {
 export const ThreeItemsOrdinaryUser = Template.bind({});
 
 ThreeItemsOrdinaryUser.args = {
-    menuItems: ucsbDiningCommonsMenuItemFixtures.threeDiningCommonsMenuItems,
+    menuItems: ucsbDiningCommonsMenuItemsFixtures.threeDiningCommonsMenuItems,
     currentUser: currentUserFixtures.userOnly,
 };
 
 export const ThreeItemsAdminUser = Template.bind({});
 ThreeItemsAdminUser.args = {
-    menuItems: ucsbDiningCommonsMenuItemFixtures.threeDiningCommonsMenuItems,
+    menuItems: ucsbDiningCommonsMenuItemsFixtures.threeDiningCommonsMenuItems,
     currentUser: currentUserFixtures.adminUser,
 }
 
