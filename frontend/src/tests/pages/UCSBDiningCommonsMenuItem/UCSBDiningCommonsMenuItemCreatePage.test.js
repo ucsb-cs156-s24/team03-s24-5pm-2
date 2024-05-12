@@ -57,9 +57,9 @@ describe("UCSBDiningCommonsMenuItemCreatePage tests", () => {
         const queryClient = new QueryClient();
         const menuitem = {
             id: 3,
-            diningcommonscode: "dining commons menu item 3",
-            name: "Dining Commons Menu Item 3 Title",
-            station: "Dining Commons Menu Item 3 Station"
+            name: "Chicken Caesar Salad",
+            diningCommonsCode: "Ortega",
+            station: "Entrees"
         };
 
         axiosMock.onPost("/api/ucsbdiningcommonsmenuitem/post").reply(202, menuitem);
@@ -73,13 +73,13 @@ describe("UCSBDiningCommonsMenuItemCreatePage tests", () => {
         )
 
         await waitFor(() => {
-            expect(screen.getByLabelText("diningcommonscode")).toBeInTheDocument();
+            expect(screen.getByLabelText("name")).toBeInTheDocument();
         });
 
-        const nameInput = screen.getByLabelText("diningcommonscode");
+        const nameInput = screen.getByLabelText("name");
         expect(nameInput).toBeInTheDocument();
 
-        const diningCommonsCodeInput = screen.getByLabelText("name");
+        const diningCommonsCodeInput = screen.getByLabelText("diningCommonsCode");
         expect(diningCommonsCodeInput).toBeInTheDocument();
 
         const stationInput = screen.getByLabelText("station");
@@ -88,21 +88,21 @@ describe("UCSBDiningCommonsMenuItemCreatePage tests", () => {
         const createButton = screen.getByText("Create");
         expect(createButton).toBeInTheDocument();
 
-        fireEvent.change(diningCommonsCodeInput, { target: { value: 'dining commons menu item 3' } })
-        fireEvent.change(nameInput, { target: { value: 'Dining Commons Menu Item 3 Title' } })
-        fireEvent.change(stationInput, { target: { value: 'Dining Commons Menu Item 3 Station' } })
+        fireEvent.change(nameInput, { target: { value: 'Chicken Caesar Salad' } })
+        fireEvent.change(diningCommonsCodeInput, { target: { value: 'Ortega' } })
+        fireEvent.change(stationInput, { target: { value: 'Entrees' } })
         fireEvent.click(createButton);
 
         await waitFor(() => expect(axiosMock.history.post.length).toBe(1));
 
         expect(axiosMock.history.post[0].params).toEqual({
-            diningcommonscode: "dining commons menu item 3",
-            name: "Dining Commons Menu Item 3 Title",
-            station: "Dining Commons Menu Item 3 Station"
+            name: "Chicken Caesar Salad",
+            diningCommonsCode: "Ortega",
+            station: "Entrees"
         });
 
         // assert - check that the toast was called with the expected message
-        expect(mockToast).toBeCalledWith("New menu item created - id: 3 name: Dining Commons Menu Item 3 Title");
+        expect(mockToast).toBeCalledWith("New menu item created - id: 3 name: Chicken Caesar Salad");
         expect(mockNavigate).toBeCalledWith({ "to": "/ucsbdiningcommonsmenuitem" });
 
     });
