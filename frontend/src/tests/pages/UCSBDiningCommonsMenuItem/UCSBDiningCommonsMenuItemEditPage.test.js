@@ -102,7 +102,7 @@ describe("UCSBDiningCommonsMenuItemEditPage tests", () => {
             await screen.findByTestId("UCSBDiningCommonsMenuItemForm-id");
 
             const idField = screen.getByTestId("UCSBDiningCommonsMenuItemForm-id");
-            const diningCommonsCodeField = screen.getByTestId("UCSBDiningCommonsMenuItemForm-diningcommonscode");
+            const diningCommonsCodeField = screen.getByTestId("UCSBDiningCommonsMenuItemForm-diningCommonsCode");
             const nameField = screen.getByTestId("UCSBDiningCommonsMenuItemForm-name");
             const stationField = screen.getByTestId("UCSBDiningCommonsMenuItemForm-station");
             const submitButton = screen.getByTestId("UCSBDiningCommonsMenuItemForm-submit");
@@ -152,7 +152,7 @@ describe("UCSBDiningCommonsMenuItemEditPage tests", () => {
             await screen.findByTestId("UCSBDiningCommonsMenuItemForm-id");
 
             const idField = screen.getByTestId("UCSBDiningCommonsMenuItemForm-id");
-            const diningCommonsCodeField = screen.getByTestId("UCSBDiningCommonsMenuItemForm-diningcommonscode");
+            const diningCommonsCodeField = screen.getByTestId("UCSBDiningCommonsMenuItemForm-diningCommonsCode");
             const nameField = screen.getByTestId("UCSBDiningCommonsMenuItemForm-name");
             const stationField = screen.getByTestId("UCSBDiningCommonsMenuItemForm-station");
             const submitButton = screen.getByTestId("UCSBDiningCommonsMenuItemForm-submit");
