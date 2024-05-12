@@ -16,8 +16,8 @@ jest.mock('react-router-dom', () => ({
 describe("UCSBDiningCommonsMenuItemTable tests", () => {
   const queryClient = new QueryClient();
 
-  const expectedHeaders = ["id", "diningCommonsCode", "name", "station"];
-  const expectedFields = ["id", "diningCommonsCode", "name", "station"];
+  const expectedHeaders = ["id", "diningcommonscode", "name", "station"];
+  const expectedFields = ["id", "diningcommonscode", "name", "station"];
   const testId = "UCSBDiningCommonsMenuItemTable";
 
   test("renders empty table correctly", () => {
@@ -71,12 +71,12 @@ describe("UCSBDiningCommonsMenuItemTable tests", () => {
     });
 
     expect(screen.getByTestId(`${testId}-cell-row-0-col-id`)).toHaveTextContent("2");
-    expect(screen.getByTestId(`${testId}-cell-row-0-col-diningCommonsCode`)).toHaveTextContent("dining commons menu item 2");
+    expect(screen.getByTestId(`${testId}-cell-row-0-col-diningcommonscode`)).toHaveTextContent("dining commons menu item 2");
     expect(screen.getByTestId(`${testId}-cell-row-0-col-name`)).toHaveTextContent("Dining Commons Menu Item 2 Title");
     expect(screen.getByTestId(`${testId}-cell-row-0-col-station`)).toHaveTextContent("Dining Commons Menu Item 2 Station");
 
     expect(screen.getByTestId(`${testId}-cell-row-1-col-id`)).toHaveTextContent("3");
-    expect(screen.getByTestId(`${testId}-cell-row-1-col-diningCommonsCode`)).toHaveTextContent("dining commons menu item 3");
+    expect(screen.getByTestId(`${testId}-cell-row-1-col-diningcommonscode`)).toHaveTextContent("dining commons menu item 3");
     expect(screen.getByTestId(`${testId}-cell-row-1-col-name`)).toHaveTextContent("Dining Commons Menu Item 3 Title");
     expect(screen.getByTestId(`${testId}-cell-row-1-col-station`)).toHaveTextContent("Dining Commons Menu Item 3 Station");
 
@@ -115,12 +115,12 @@ describe("UCSBDiningCommonsMenuItemTable tests", () => {
     });
 
     expect(screen.getByTestId(`${testId}-cell-row-0-col-id`)).toHaveTextContent("2");
-    expect(screen.getByTestId(`${testId}-cell-row-0-col-diningCommonsCode`)).toHaveTextContent("dining commons menu item 2");
+    expect(screen.getByTestId(`${testId}-cell-row-0-col-diningcommonscode`)).toHaveTextContent("dining commons menu item 2");
     expect(screen.getByTestId(`${testId}-cell-row-0-col-name`)).toHaveTextContent("Dining Commons Menu Item 2 Title");
     expect(screen.getByTestId(`${testId}-cell-row-0-col-station`)).toHaveTextContent("Dining Commons Menu Item 2 Station");
 
     expect(screen.getByTestId(`${testId}-cell-row-1-col-id`)).toHaveTextContent("3");
-    expect(screen.getByTestId(`${testId}-cell-row-1-col-diningCommonsCode`)).toHaveTextContent("dining commons menu item 3");
+    expect(screen.getByTestId(`${testId}-cell-row-1-col-diningcommonscode`)).toHaveTextContent("dining commons menu item 3");
     expect(screen.getByTestId(`${testId}-cell-row-1-col-name`)).toHaveTextContent("Dining Commons Menu Item 3 Title");
     expect(screen.getByTestId(`${testId}-cell-row-1-col-station`)).toHaveTextContent("Dining Commons Menu Item 3 Station");
 
@@ -144,7 +144,7 @@ describe("UCSBDiningCommonsMenuItemTable tests", () => {
 
     // assert - check that the expected content is rendered
     expect(await screen.findByTestId(`${testId}-cell-row-0-col-id`)).toHaveTextContent("2");
-    expect(screen.getByTestId(`${testId}-cell-row-0-col-diningCommonsCode`)).toHaveTextContent("dining commons menu item 2");
+    expect(screen.getByTestId(`${testId}-cell-row-0-col-diningcommonscode`)).toHaveTextContent("dining commons menu item 2");
     expect(screen.getByTestId(`${testId}-cell-row-0-col-name`)).toHaveTextContent("Dining Commons Menu Item 2 Title");
     expect(screen.getByTestId(`${testId}-cell-row-0-col-station`)).toHaveTextContent("Dining Commons Menu Item 2 Station");
 
@@ -174,7 +174,7 @@ describe("UCSBDiningCommonsMenuItemTable tests", () => {
 
     // assert - check that the expected content is rendered
     expect(await screen.findByTestId(`${testId}-cell-row-0-col-id`)).toHaveTextContent("2");
-    expect(screen.getByTestId(`${testId}-cell-row-0-col-diningCommonsCode`)).toHaveTextContent("dining commons menu item 2");
+    expect(screen.getByTestId(`${testId}-cell-row-0-col-diningcommonscode`)).toHaveTextContent("dining commons menu item 2");
     expect(screen.getByTestId(`${testId}-cell-row-0-col-name`)).toHaveTextContent("Dining Commons Menu Item 2 Title");
     expect(screen.getByTestId(`${testId}-cell-row-0-col-station`)).toHaveTextContent("Dining Commons Menu Item 2 Station");
 
