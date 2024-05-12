@@ -75,13 +75,13 @@ describe("UCSBDiningCommonsMenuItemEditPage tests", () => {
             axiosMock.onGet("/api/systemInfo").reply(200, systemInfoFixtures.showingNeither);
             axiosMock.onGet("/api/ucsbdiningcommonsmenuitem", { params: { id: 17 } }).reply(200, {
                 id: 17,
-                diningcommonscode: "Ortega",
+                diningCommonsCode: "Ortega",
                 name: "Baked Pesto Pasta with Chicken",
                 station: "Entree Specials"
             });
             axiosMock.onPut('/api/ucsbdiningcommonsmenuitem').reply(200, {
                 id: "17",
-                diningcommonscode: "DLG",
+                diningCommonsCode: "DLG",
                 name: "Baked Pesto Pasta",
                 station: "Entrees"
             });
