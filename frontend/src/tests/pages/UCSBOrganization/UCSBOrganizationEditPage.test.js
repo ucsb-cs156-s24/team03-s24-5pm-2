@@ -26,7 +26,7 @@ jest.mock('react-router-dom', () => {
         __esModule: true,
         ...originalModule,
         useParams: () => ({
-            id: 17
+            id: "KRC"
         }),
         Navigate: (x) => { mockNavigate(x); return null; }
     };
@@ -79,13 +79,13 @@ describe("UCSBOrganizationEditPageEditPage tests", () => {
                 orgCode: "KRC",
                 orgTranslationShort: "KOREAN RADIO CL",
                 orgTranslation: "KOREAN RADIO CLUB",
-                inactive: "false"
+                inactive: false
             });
             axiosMock.onPut('/api/UCSBOrganization').reply(200, {
                 orgCode: "KRC",
                 orgTranslationShort: "Cooling",
                 orgTranslation: "Coolest",
-                inactive: "false"
+                inactive: true
             });
         });
 
@@ -112,9 +112,9 @@ describe("UCSBOrganizationEditPageEditPage tests", () => {
             expect(orgCodeField).toBeInTheDocument();
             expect(orgCodeField).toHaveValue("KRC");
             expect(orgTranslationShortField).toBeInTheDocument();
-            expect(orgTranslationShortField).toHaveValue("Cool");
+            expect(orgTranslationShortField).toHaveValue("KOREAN RADIO CL");
             expect(orgTranslationField).toBeInTheDocument();
-            expect(orgTranslationField).toHaveValue("Cooler");
+            expect(orgTranslationField).toHaveValue("KOREAN RADIO CLUB");
             expect(isActiveField).toBeInTheDocument();
             expect(isActiveField).toHaveValue("false");
 
@@ -137,7 +137,7 @@ describe("UCSBOrganizationEditPageEditPage tests", () => {
                  orgTranslationShort: 'Cooling',
                  orgTranslation: 'Coolest',
                  inactive: 'true'
-             })); // posted object
+             })); 
 
 
         });
@@ -163,18 +163,18 @@ describe("UCSBOrganizationEditPageEditPage tests", () => {
              const submitButton = screen.getByTestId("OrganizationForm-submit");
 
             expect(orgCodeField).toHaveValue("KRC");
-            expect(orgTranslationShortField).toHaveValue("Cool");
-            expect(orgTranslationField).toHaveValue("Cooler");
+            expect(orgTranslationShortField).toHaveValue("KOREAN RADIO CL");
+            expect(orgTranslationField).toHaveValue("KOREAN RADIO CLUB");
             expect(isActiveField).toHaveValue("false");
 
             fireEvent.change(orgTranslationShortField, { target: { value: 'Cooling' } });
             fireEvent.change(orgTranslationField, { target: { value: 'Coolest' } });
-
+            fireEvent.change(isActiveField, { target: { value: 'True' } });
             fireEvent.click(submitButton);
 
             await waitFor(() => expect(mockToast).toBeCalled());
             expect(mockToast).toBeCalledWith("UCSB Organization Updated - orgCode: KRC");
-             expect(mockNavigate).toBeCalledWith({ "to": "/UCSBOrganization" });
+            expect(mockNavigate).toBeCalledWith({ "to": "/UCSBOrganization" });
         });
 
        
