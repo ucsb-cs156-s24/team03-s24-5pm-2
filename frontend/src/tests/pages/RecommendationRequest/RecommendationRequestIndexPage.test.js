@@ -46,7 +46,7 @@ describe("RecommendationRequestIndexPage tests", () => {
         // arrange
         setupAdminUser();
         const queryClient = new QueryClient();
-        axiosMock.onGet("/api/RecommendationRequest/all").reply(200, []);
+        axiosMock.onGet("/api/recommendationrequest/all").reply(200, []);
 
         // act
         render(
@@ -62,7 +62,7 @@ describe("RecommendationRequestIndexPage tests", () => {
             expect(screen.getByText(/Create RecommendationRequest/)).toBeInTheDocument();
         });
         const button = screen.getByText(/Create RecommendationRequest/);
-        expect(button).toHaveAttribute("href", "/RecommendationRequest/create");
+        expect(button).toHaveAttribute("href", "/recommendationrequest/create");
         expect(button).toHaveAttribute("style", "float: right;");
     });
 
@@ -71,7 +71,7 @@ describe("RecommendationRequestIndexPage tests", () => {
         // arrange
         setupUserOnly();
         const queryClient = new QueryClient();
-        axiosMock.onGet("/api/RecommendationRequest/all").reply(200, recommendationRequestFixtures.threeRecs);
+        axiosMock.onGet("/api/recommendationrequest/all").reply(200, recommendationRequestFixtures.threeRecs);
 
         // act
         render(
@@ -97,7 +97,7 @@ describe("RecommendationRequestIndexPage tests", () => {
         // arrange
         setupUserOnly();
         const queryClient = new QueryClient();
-        axiosMock.onGet("/api/RecommendationRequest/all").timeout();
+        axiosMock.onGet("/api/recommendationrequest/all").timeout();
         const restoreConsole = mockConsole();
 
         // act
@@ -113,7 +113,7 @@ describe("RecommendationRequestIndexPage tests", () => {
         await waitFor(() => { expect(axiosMock.history.get.length).toBeGreaterThanOrEqual(1); });
 
         const errorMessage = console.error.mock.calls[0][0];
-        expect(errorMessage).toMatch("Error communicating with backend via GET on /api/RecommendationRequest/all");
+        expect(errorMessage).toMatch("Error communicating with backend via GET on /api/recommendationrequest/all");
         restoreConsole();
 
         expect(screen.queryByTestId(`${testId}-cell-row-0-col-id`)).not.toBeInTheDocument();
@@ -123,8 +123,8 @@ describe("RecommendationRequestIndexPage tests", () => {
         // arrange
         setupAdminUser();
         const queryClient = new QueryClient();
-        axiosMock.onGet("/api/RecommendationRequest/all").reply(200, recommendationRequestFixtures.threeRecs);
-        axiosMock.onDelete("/api/RecommendationRequest").reply(200, "RecommendationRequest with id 1 was deleted");
+        axiosMock.onGet("/api/recommendationrequest/all").reply(200, recommendationRequestFixtures.threeRecs);
+        axiosMock.onDelete("/api/recommendationrequest").reply(200, "RecommendationRequest with id 1 was deleted");
 
         // act
         render(

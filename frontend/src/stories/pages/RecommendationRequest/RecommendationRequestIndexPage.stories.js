@@ -23,7 +23,7 @@ Empty.parameters = {
         rest.get('/api/systemInfo', (_req, res, ctx) => {
             return res(ctx.json(systemInfoFixtures.showingNeither));
         }),
-        rest.get('/api/RecommendationRequest/all', (_req, res, ctx) => {
+        rest.get('/api/recommendationrequest/all', (_req, res, ctx) => {
             return res(ctx.json([]));
         }),
     ]
@@ -39,7 +39,7 @@ ThreeItemsOrdinaryUser.parameters = {
         rest.get('/api/systemInfo', (_req, res, ctx) => {
             return res(ctx.json(systemInfoFixtures.showingNeither));
         }),
-        rest.get('/api/RecommendationRequest/all', (_req, res, ctx) => {
+        rest.get('/api/recommendationrequest/all', (_req, res, ctx) => {
             return res(ctx.json(recommendationRequestFixtures.threeRecs));
         }),
     ],
