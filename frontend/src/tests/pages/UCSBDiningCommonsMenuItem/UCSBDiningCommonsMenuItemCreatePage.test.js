@@ -106,4 +106,4 @@ describe("UCSBDiningCommonsMenuItemCreatePage tests", () => {
         expect(mockNavigate).toBeCalledWith({ "to": "/ucsbdiningcommonsmenuitem" });
 
     });
-});
+}); 

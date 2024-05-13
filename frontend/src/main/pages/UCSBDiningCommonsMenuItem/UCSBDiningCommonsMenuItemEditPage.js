@@ -28,8 +28,8 @@ export default function UCSBDiningCommonsMenuItemEditPage({storybook=false}) {
             id: menuitem.id,
         },
         data: {
-            diningcommonscode: menuitem.diningcommonscode,
             name: menuitem.name,
+            diningCommonsCode: menuitem.diningCommonsCode,
             station: menuitem.station
         }
     });
