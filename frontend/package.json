@@ -48,8 +48,7 @@
     "jest-watch-typeahead": "^0.6.5",
     "msw": "^1.2.3",
     "msw-storybook-addon": "^1.8.0",
-    "react-test-renderer": "^17.0.2",
-    "typescript": "^5.4.5"
+    "react-test-renderer": "^17.0.2"
   },
   "scripts": {
     "start": "env-cmd -f ../.env -e development react-scripts start",
