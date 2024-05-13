@@ -79,7 +79,7 @@ describe("UCSBOrganizationIndexPage tests", () => {
         expect(screen.getByTestId(`${testId}-cell-row-1-col-orgCode`)).toHaveTextContent("ZPR");
         expect(screen.getByTestId(`${testId}-cell-row-2-col-orgCode`)).toHaveTextContent("SKY");
 
-        const createRestaurantButton = screen.queryByText("Create UCSB Organization");
+        const createRestaurantButton = screen.queryByText("Create UCSBOrganization");
         expect(createRestaurantButton).not.toBeInTheDocument();
 
         const orgCode = screen.getByText("SKY");
