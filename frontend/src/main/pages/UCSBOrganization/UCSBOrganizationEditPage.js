@@ -1,7 +1,7 @@
 import BasicLayout from "main/layouts/BasicLayout/BasicLayout";
 import { useParams } from "react-router-dom";
 import OrganizationForm from 'main/components/UCSBOrganizations/UCSBOrganizationForm';
-import { Navigate } from 'react-router-dom'
+import { Navigate } from 'react-router-dom';
 import { useBackend, useBackendMutation } from "main/utils/useBackend";
 import { toast } from "react-toastify";
 
