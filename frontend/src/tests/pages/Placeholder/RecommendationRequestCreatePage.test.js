@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import RecommendationRequestEditPage from "main/pages/RecommendationRequest/RecommendationRequestEditPage";
+import RecommendationRequestCreatePage from "main/pages/RecommendationRequest/RecommendationRequestCreatePage";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { MemoryRouter } from "react-router-dom";
 
@@ -8,8 +8,7 @@ import { systemInfoFixtures } from "fixtures/systemInfoFixtures";
 import axios from "axios";
 import AxiosMockAdapter from "axios-mock-adapter";
 
-
-describe("RecommendationRequestEditPage tests", () => {
+describe("RecommendationRequestCreatePage tests", () => {
 
     const axiosMock = new AxiosMockAdapter(axios);
 
@@ -25,18 +24,18 @@ describe("RecommendationRequestEditPage tests", () => {
         // arrange
 
         setupUserOnly();
-
+       
         // act
         render(
             <QueryClientProvider client={queryClient}>
                 <MemoryRouter>
-                    <RecommendationRequestEditPage />
+                    <RecommendationRequestCreatePage />
                 </MemoryRouter>
             </QueryClientProvider>
         );
 
         // assert
-        expect(screen.getByText("Edit page not yet implemented")).toBeInTheDocument();
+        expect(screen.getByText("Create page not yet implemented")).toBeInTheDocument();
     });
 
 });
