@@ -44,7 +44,7 @@ function OrganizationForm({ initialContents, submitAction, buttonLabel = "Create
             <Form.Group className="mb-3" >
                 <Form.Label htmlFor="orgTranslationShort">orgTranslationShort</Form.Label>
                 <Form.Control
-                    data-testid={testIdPrefix + "-orgTranslationShort"}
+                    data-testid={/*testIdPrefix +*/ "OrganizationForm-orgTranslationShort"}
                     id="orgTranslationShort"
                     type="text"
                     isInvalid={Boolean(errors.orgTranslationShort)}
@@ -60,7 +60,7 @@ function OrganizationForm({ initialContents, submitAction, buttonLabel = "Create
             <Form.Group className="mb-3" >
                 <Form.Label htmlFor="orgTranslation">orgTranslation</Form.Label>
                 <Form.Control
-                    data-testid={testIdPrefix + "-orgTranslation"}
+                    data-testid={/*testIdPrefix +*/ "OrganizationForm-orgTranslation"}
                     id="orgTranslation"
                     type="text"
                     isInvalid={Boolean(errors.orgTranslation)}
@@ -76,7 +76,7 @@ function OrganizationForm({ initialContents, submitAction, buttonLabel = "Create
             <Form.Group className="mb-3" >
                 <Form.Label htmlFor="inactive">inactive</Form.Label>
                 <Form.Control
-                    data-testid={testIdPrefix + "-inactive"}
+                    data-testid={"OrganizationForm-inactive"}
                     id="inactive"
                     type="text"
                     isInvalid={Boolean(errors.inactive)}
@@ -92,7 +92,7 @@ function OrganizationForm({ initialContents, submitAction, buttonLabel = "Create
 
             <Button
                 type="submit"
-                data-testid={testIdPrefix + "-submit"}
+                data-testid={/*testIdPrefix +*/ "OrganizationForm-submit"}
             >
                 {buttonLabel}
             </Button>
