@@ -2,7 +2,7 @@ const helpRequestFixtures = {
     oneHelpRequest:
     [
         {
-            "id": 0,
+            "id": 1,
             "requesterEmail": "adrumm@gucsb.edu",
             "teamId": "team10",
             "tableOrBreakoutRoom": "10",
@@ -15,7 +15,7 @@ const helpRequestFixtures = {
     threeHelpRequest:
     [
         {
-            "id": 0,
+            "id": 1,
             "requesterEmail": "adrumm@gucsb.edu",
             "teamId": "team10",
             "tableOrBreakoutRoom": "10",
