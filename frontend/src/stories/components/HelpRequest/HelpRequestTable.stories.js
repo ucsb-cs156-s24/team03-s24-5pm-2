@@ -24,13 +24,13 @@ Empty.args = {
 export const ThreeItemsOrdinaryUser = Template.bind({});
 
 ThreeItemsOrdinaryUser.args = {
-    dates: helpRequestFixtures.threeHelpRequests,
+    dates: helpRequestFixtures.threeHelpRequest,
     currentUser: currentUserFixtures.userOnly,
 };
 
 export const ThreeItemsAdminUser = Template.bind({});
 ThreeItemsAdminUser.args = {
-    dates: helpRequestFixtures.threeHelpRequests,
+    dates: helpRequestFixtures.threeHelpRequest,
     currentUser: currentUserFixtures.adminUser,
 }
 
