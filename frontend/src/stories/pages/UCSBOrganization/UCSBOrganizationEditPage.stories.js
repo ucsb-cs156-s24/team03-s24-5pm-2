@@ -23,7 +23,7 @@ Default.parameters = {
             return res(ctx.json(systemInfoFixtures.showingNeither));
         }),
         rest.get('/api/UCSBOrganization', (_req, res, ctx) => {
-            return res(ctx.json(ucsbOrganizationsFixtures.oneOrganization[0]));
+            return res(ctx.json(ucsbOrganizationsFixtures.oneOrganization));
         }),
         rest.put('/api/UCSBOrganization', async (req, res, ctx) => {
             var reqBody = await req.text();
