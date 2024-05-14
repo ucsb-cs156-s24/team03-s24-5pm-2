@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for pages/Articles/ArticlesCreatePage.js</title>
+    <title>Code coverage report for pages/MenuItemReview/MenuItemReviewCreatePage.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">pages/Articles</a> ArticlesCreatePage.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">pages/MenuItemReview</a> MenuItemReviewCreatePage.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -166,34 +166,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import BasicLayout from "main/layouts/BasicLayout/BasicLayout";
-import ArticlesForm from "main/components/Articles/ArticlesForm";
+import MenuItemReviewForm from "main/components/MenuItemReview/MenuItemReviewForm";
 import { Navigate } from 'react-router-dom'
 import { useBackendMutation } from "main/utils/useBackend";
 import { toast } from "react-toastify";
 &nbsp;
-export default function ArticlesCreatePage({storybook=false}) {
+export default function MenuItemReviewCreatePage({storybook=false}) {
 &nbsp;
-  const objectToAxiosParams = (articles) =&gt; ({
-    url: "/api/articles/post",
+  const objectToAxiosParams = (review) =&gt; ({
+    url: "/api/menuitemreviews/post",
     method: "POST",
     params: {
-      title: articles.title,
-      url: articles.url,
-      explanation: articles.explanation,
-      email: articles.email,
-      dateAdded: articles.dateAdded
+      itemId: review.itemId,
+      reviewerEmail: review.reviewerEmail,
+      stars: review.stars,
+      dateReviewed: review.dateReviewed,
+      comments: review.comments,
     }
   });
 &nbsp;
-  const onSuccess = (articles) =&gt; {
-    toast(`New Article Created - id: ${articles.id} title: ${articles.title}`);
+  const onSuccess = (review) =&gt; {
+    toast(`New MenuItemReview Created - id: ${review.id} itemId: ${review.itemId}`);
   }
 &nbsp;
   const mutation = useBackendMutation(
     objectToAxiosParams,
      { onSuccess }, 
      // Stryker disable next-line all : hard to set up test for caching
-     ["/api/articles/all"]
+     ["/api/menuitemreviews/all"]
      );
 &nbsp;
   const { isSuccess } = mutation
@@ -203,16 +203,16 @@ export default function ArticlesCreatePage({storybook=false}) {
   }
 &nbsp;
   if (isSuccess &amp;&amp; !storybook) {
-    return &lt;Navigate to="/articles" /&gt;
+    return &lt;Navigate to="/menuitemreview" /&gt;
   }
 &nbsp;
   return (
     &lt;BasicLayout&gt;
       &lt;div className="pt-2"&gt;
-        &lt;h1&gt;Create New Article&lt;/h1&gt;
+        &lt;h1&gt;Create New MenuItemReview&lt;/h1&gt;
 &nbsp;
-        &lt;ArticlesForm submitAction={onSubmit} /&gt;
-&nbsp;
+        &lt;MenuItemReviewForm submitAction={onSubmit} /&gt;
+        
       &lt;/div&gt;
     &lt;/BasicLayout&gt;
   )
