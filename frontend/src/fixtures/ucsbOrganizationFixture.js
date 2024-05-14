@@ -6,7 +6,7 @@ const ucsbOrganizationsFixtures = {
             //string
         "orgTranslation": "KOREAN RADIO CLUB",
             //string
-        "inactive": false
+        "inactive": "false"
             //boolean
     },
     
@@ -15,19 +15,19 @@ const ucsbOrganizationsFixtures = {
             "orgCode": "KRC",
             "orgTranslationShort": "KOREAN RADIO CL",
             "orgTranslation": "KOREAN RADIO CLUB",
-            "inactive": false
+            "inactive": "false"
         },
         {
             "orgCode": "ZPR",
             "orgTranslationShort": "ZETA PHI RHO",
             "orgTranslation": "ZETA PHI RHO",
-            "inactive": false
+            "inactive": "false"
         },
         {
             "orgCode": "SKY",
             "orgTranslationShort": "SKYDIVING CLUB",
             "orgTranslation": "SKYDIVING CLUB AT UCSB",
-            "inactive": false
+            "inactive": "false"
         }
     ]
 };
