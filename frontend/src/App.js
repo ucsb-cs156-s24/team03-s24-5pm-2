@@ -15,6 +15,10 @@ import RestaurantIndexPage from "main/pages/Restaurants/RestaurantIndexPage";
 import RestaurantCreatePage from "main/pages/Restaurants/RestaurantCreatePage";
 import RestaurantEditPage from "main/pages/Restaurants/RestaurantEditPage";
 
+import RecommendationRequestIndexPage from "main/pages/RecommendationRequest/RecommendationRequestIndexPage";
+import RecommendationRequestCreatePage from "main/pages/RecommendationRequest/RecommendationRequestCreatePage";
+import RecommendationRequestEditPage from "main/pages/RecommendationRequest/RecommendationRequestEditPage";
+
 import MenuItemReviewIndexPage from "main/pages/MenuItemReview/MenuItemReviewIndexPage";
 import MenuItemReviewCreatePage from "main/pages/MenuItemReview/MenuItemReviewCreatePage";
 import MenuItemReviewEditPage from "main/pages/MenuItemReview/MenuItemReviewEditPage";
@@ -49,6 +53,7 @@ function App() {
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
+              <Route exact path="/recommendationrequest" element={<RecommendationRequestIndexPage />} />
               <Route exact path="/UCSBOrganization" element={<UCSBOrganizationIndexPage />} />
               <Route exact path="/helprequest" element={<HelpRequestIndexPage />} />
               <Route exact path="/menuitemreview" element={<MenuItemReviewIndexPage />} />
@@ -62,6 +67,8 @@ function App() {
         {
           hasRole(currentUser, "ROLE_ADMIN") && (
             <>
+              <Route exact path="/recommendationrequest/edit/:id" element={<RecommendationRequestEditPage />} />
+              <Route exact path="/recommendationrequest/create" element={<RecommendationRequestCreatePage />} />
               <Route exact path="/UCSBOrganization/edit/:id" element={<UCSBOrganizationEditPage />} />
               <Route exact path="/UCSBOrganization/create" element={<UCSBOrganizationCreatePage />} />
               <Route exact path="/helprequest/edit/:id" element={<HelpRequestEditPage />} />
@@ -77,7 +84,6 @@ function App() {
             </>
           )
         }
-        
       </Routes>
     </BrowserRouter>
   );

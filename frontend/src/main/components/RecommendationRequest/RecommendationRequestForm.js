@@ -139,6 +139,7 @@ function RecommendationRequestForm({ initialContents, submitAction, buttonLabel 
                             data-testid="RecommendationRequestForm-done"
                             id="done"
                             type="checkbox"
+                            {...register("done")}
                         />
                     </Form.Group>
                 </Col>
