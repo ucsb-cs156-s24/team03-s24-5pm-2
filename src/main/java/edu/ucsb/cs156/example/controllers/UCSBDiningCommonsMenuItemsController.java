@@ -32,7 +32,7 @@ import javax.validation.Valid;
 import java.time.LocalDateTime;
 
 @Tag(name = "ucsbdiningcommonsmenuitems")
-@RequestMapping("/api/ucsbdiningcommonsmenuitems")
+@RequestMapping("/api/ucsbdiningcommonsmenuitem")
 @RestController
 @Slf4j
 
