@@ -94,7 +94,7 @@ public class RecommendationRequestControllerTests extends ControllerTestCase {
                 when(recommendationRequestRepository.findAll()).thenReturn(expectedRecs);
 
                 // act
-                MvcResult response = mockMvc.perform(get("/api/RecommendationRequest/all"))
+                MvcResult response = mockMvc.perform(get("/api/recommendationrequest/all"))
                                 .andExpect(status().isOk()).andReturn();
 
                 // assert
