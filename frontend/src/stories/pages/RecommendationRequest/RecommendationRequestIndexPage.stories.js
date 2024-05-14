@@ -55,10 +55,10 @@ ThreeItemsAdminUser.parameters = {
         rest.get('/api/systemInfo', (_req, res, ctx) => {
             return res(ctx.json(systemInfoFixtures.showingNeither));
         }),
-        rest.get('/api/RecommendationRequest/all', (_req, res, ctx) => {
+        rest.get('/api/recommendationrequest/all', (_req, res, ctx) => {
             return res(ctx.json(recommendationRequestFixtures.threeRecs));
         }),
-        rest.delete('/api/RecommendationRequest', (req, res, ctx) => {
+        rest.delete('/api/recommendationrequest', (req, res, ctx) => {
             window.alert("DELETE: " + JSON.stringify(req.url));
             return res(ctx.status(200),ctx.json({}));
         }),
