@@ -2,7 +2,7 @@ import React from "react";
 import OurTable, { ButtonColumn } from "main/components/OurTable";
 
 import { useBackendMutation } from "main/utils/useBackend";
-import { cellToAxiosParamsDelete, onDeleteSuccess } from "main/utils/restaurantUtils"
+import { cellToAxiosParamsDelete, onDeleteSuccess } from "main/utils/UCSBDiningCommonsMenuItemUtils"
 import { useNavigate } from "react-router-dom";
 import { hasRole } from "main/utils/currentUser";
 
@@ -17,8 +17,7 @@ export default function UCSBDiningCommonsMenuItemTable({
         navigate(`/ucsbdiningcommonsmenuitem/edit/${cell.row.values.id}`)
     }
 
-    // Stryker disable all : hard to test for query caching
-
+    // Stryker disable all : hard to test for query caching 
     const deleteMutation = useBackendMutation(
         cellToAxiosParamsDelete,
         { onSuccess: onDeleteSuccess },
@@ -26,7 +25,7 @@ export default function UCSBDiningCommonsMenuItemTable({
     );
     // Stryker restore all 
 
-    // Stryker disable next-line all : TODO try to make a good test for this
+    // Stryker disable next-line all 
     const deleteCallback = async (cell) => { deleteMutation.mutate(cell); }
 
     const columns = [
