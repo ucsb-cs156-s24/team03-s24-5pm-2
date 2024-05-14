@@ -85,11 +85,11 @@ describe("MenuItemReviewCreatePage tests", () => {
         const submitButton = screen.getByTestId("MenuItemReviewForm-submit");
         expect(submitButton).toBeInTheDocument();
 
-        fireEvent.change(itemIdInput, { target: { value: '126' } })
-        fireEvent.change(reviewerEmailInput, { target: { value: 'blahblah@gmail.com' } })
+        fireEvent.change(itemIdInput, { target: { value: '44' } })
+        fireEvent.change(reviewerEmailInput, { target: { value: 'emailfour@gmail.com' } })
         fireEvent.change(starsInput, { target: { value: '5' } })
-        fireEvent.change(dateReviewedInput, { target: { value: '2022-04-02T14:00:00' } })
-        fireEvent.change(commentsInput, { target: { value: 'This is godly...' } })
+        fireEvent.change(dateReviewedInput, { target: { value: '2024-04-04T14:00:00' } })
+        fireEvent.change(commentsInput, { target: { value: 'unfourgettable' } })
         fireEvent.click(submitButton);
 
         await waitFor(() => expect(axiosMock.history.post.length).toBe(1));

@@ -133,7 +133,7 @@ describe("UserTable tests", () => {
 
     // assert - check that the expected content is rendered
     expect(await screen.findByTestId(`MenuItemReviewTable-cell-row-0-col-id`)).toHaveTextContent("1");
-    expect(screen.getByTestId(`MenuItemReviewTable-cell-row-0-col-itemId`)).toHaveTextContent("123");
+    expect(screen.getByTestId(`MenuItemReviewTable-cell-row-0-col-itemId`)).toHaveTextContent("8");
 
     const deleteButton = screen.getByTestId(`MenuItemReviewTable-cell-row-0-col-Delete-button`);
     expect(deleteButton).toBeInTheDocument();

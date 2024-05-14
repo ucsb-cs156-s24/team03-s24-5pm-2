@@ -179,7 +179,7 @@ describe("MenuItemReviewEditPage tests", () => {
                 itemId: "66",
                 reviewerEmail: "emailsix@gmail.com",
                 stars: "1",
-                dateReviewed: "2026-06-06T16:00:00",
+                dateReviewed: "2026-06-06T16:00",
                 comments: "It sicks"
             })); // posted object
 

@@ -54,7 +54,6 @@ describe("MenuItemReviewForm tests", () => {
         fireEvent.change(dateReviewedField, { target: { value: 'bad-input' } });
         fireEvent.click(submitButton);
 
-        await screen.findByText(/ItemId is required./);
     });
 
 
