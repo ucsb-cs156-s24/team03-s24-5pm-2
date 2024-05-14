@@ -59,7 +59,7 @@ describe("MenuItemReviewCreatePage tests", () => {
             itemId: 44,
             reviewerEmail: "emailfour@gmail.com",
             stars: 5,
-            dateReviewed: "2024-04-02T14:00:00",
+            dateReviewed: "2024-04-04T14:00:00",
             comments: "unfourgettable"
         };
 
@@ -98,7 +98,7 @@ describe("MenuItemReviewCreatePage tests", () => {
             itemId: "44",
             reviewerEmail: "emailfour@gmail.com",
             stars: "5",
-            dateReviewed: "2024-04-02T14:00",
+            dateReviewed: "2024-04-04T14:00",
             comments: "unfourgettable"
         });
 
