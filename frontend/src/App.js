@@ -35,6 +35,10 @@ import ArticlesIndexPage from "main/pages/Articles/ArticlesIndexPage";
 import ArticlesCreatePage from "main/pages/Articles/ArticlesCreatePage";
 import ArticlesEditPage from "main/pages/Articles/ArticlesEditPage";
 
+import PlaceholderIndexPage from "main/pages/Placeholder/PlaceholderIndexPage";
+import PlaceholderCreatePage from "main/pages/Placeholder/PlaceholderCreatePage";
+import PlaceholderEditPage from "main/pages/Placeholder/PlaceholderEditPage"; 
+
 import { hasRole, useCurrentUser } from "main/utils/currentUser";
 
 import "bootstrap/dist/css/bootstrap.css";
@@ -61,6 +65,7 @@ function App() {
               <Route exact path="/articles" element={<ArticlesIndexPage />} />
               <Route exact path="/restaurants" element={<RestaurantIndexPage />} />
               <Route exact path="/ucsbdates" element={<UCSBDatesIndexPage />} />
+              <Route exact path="/placeholder" element={<PlaceholderIndexPage />} />
             </>
           )
         }
@@ -83,6 +88,8 @@ function App() {
               <Route exact path="/restaurants/create" element={<RestaurantCreatePage />} />
               <Route exact path="/ucsbdates/edit/:id" element={<UCSBDatesEditPage />} />
               <Route exact path="/ucsbdates/create" element={<UCSBDatesCreatePage />} />
+              <Route exact path="/placeholder/edit/:id" element={<PlaceholderEditPage />} />
+              <Route exact path="/placeholder/create" element={<PlaceholderCreatePage />} />
             </>
           )
         }

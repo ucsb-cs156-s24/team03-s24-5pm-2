@@ -45,6 +45,7 @@ describe("UCSBOrganizationIndexPage tests", () => {
 
     test("Renders with Create Button for admin user", async () => {
         setupAdminUser();
+        
         axiosMock.onGet("/api/UCSBOrganization/all").reply(200, []);
 
         render(
