@@ -85,26 +85,7 @@ function App() {
               <Route exact path="/placeholder/create" element={<PlaceholderCreatePage />} />
             </>
           )
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
+        }          
       </Routes>
     </BrowserRouter>
   );
