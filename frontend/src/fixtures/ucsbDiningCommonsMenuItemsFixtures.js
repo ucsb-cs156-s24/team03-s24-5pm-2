@@ -1,4 +1,4 @@
-const diningCommonsMenuItemsFixtures = {
+const ucsbDiningCommonsMenuItemsFixtures = {
     oneDiningCommonsMenuItem:
     [
       {
@@ -35,4 +35,4 @@ const diningCommonsMenuItemsFixtures = {
     ]
 };
 
-export { diningCommonsMenuItemsFixtures };
+export { ucsbDiningCommonsMenuItemsFixtures };
