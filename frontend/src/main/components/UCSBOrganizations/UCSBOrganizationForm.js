@@ -44,7 +44,7 @@ function OrganizationForm({ initialContents, submitAction, buttonLabel = "Create
             <Form.Group className="mb-3" >
                 <Form.Label htmlFor="orgTranslationShort">orgTranslationShort</Form.Label>
                 <Form.Control
-                    data-testid={testIdPrefix + "-orgTranslationShort"}
+                    data-testid={/*testIdPrefix +*/ "OrganizationForm-orgTranslationShort"}
                     id="orgTranslationShort"
                     type="text"
                     isInvalid={Boolean(errors.orgTranslationShort)}
@@ -60,7 +60,7 @@ function OrganizationForm({ initialContents, submitAction, buttonLabel = "Create
             <Form.Group className="mb-3" >
                 <Form.Label htmlFor="orgTranslation">orgTranslation</Form.Label>
                 <Form.Control
-                    data-testid={testIdPrefix + "-orgTranslation"}
+                    data-testid={/*testIdPrefix +*/ "OrganizationForm-orgTranslation"}
                     id="orgTranslation"
                     type="text"
                     isInvalid={Boolean(errors.orgTranslation)}
@@ -75,24 +75,22 @@ function OrganizationForm({ initialContents, submitAction, buttonLabel = "Create
 
             <Form.Group className="mb-3" >
                 <Form.Label htmlFor="inactive">inactive</Form.Label>
-                <Form.Control
-                    data-testid={testIdPrefix + "-inactive"}
-                    id="inactive"
-                    type="text"
-                    isInvalid={Boolean(errors.inactive)}
-                    {...register("inactive", {
-                        required: "inactive is required."
-                    })}
-                />
-                <Form.Control.Feedback type="invalid">
-                    {errors.inactive?.message}
-                </Form.Control.Feedback>
+                <Form.Select
+                         data-testid={testIdPrefix + "-inactive"}
+                         id="inactive"
+                         {...register("inactive")}
+                     >
+                         <option value="true">True</option>
+                         <option value="false">False</option>
+                     </Form.Select>
+
+                
             </Form.Group>
 
 
             <Button
                 type="submit"
-                data-testid={testIdPrefix + "-submit"}
+                data-testid={/*testIdPrefix +*/ "OrganizationForm-submit"}
             >
                 {buttonLabel}
             </Button>

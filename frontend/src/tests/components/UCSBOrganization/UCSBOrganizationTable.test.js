@@ -72,12 +72,14 @@ describe("OrganizationTable tests", () => {
     expect(screen.getByTestId(`${testId}-cell-row-0-col-orgCode`)).toHaveTextContent(ucsbOrganizationsFixtures.threeOrganization[0].orgCode);
     expect(screen.getByTestId(`${testId}-cell-row-0-col-orgTranslationShort`)).toHaveTextContent(ucsbOrganizationsFixtures.threeOrganization[0].orgTranslationShort);
     expect(screen.getByTestId(`${testId}-cell-row-0-col-orgTranslation`)).toHaveTextContent(ucsbOrganizationsFixtures.threeOrganization[0].orgTranslationShort);
-    //expect(screen.getByTestId(`${testId}-cell-row-0-col-inactive`)).toHaveTextContent(ucsbOrganizationsFixtures.threeOrganization[0].inactive);
+    expect(screen.getByTestId(`${testId}-cell-row-0-col-inactive`)).toHaveTextContent(ucsbOrganizationsFixtures.threeOrganization[0].inactive);
+    expect(screen.getByTestId(`${testId}-cell-row-0-col-inactive`)).toHaveTextContent( 'false');
     //This is the problem
     expect(screen.getByTestId(`${testId}-cell-row-1-col-orgCode`)).toHaveTextContent(ucsbOrganizationsFixtures.threeOrganization[1].orgCode);
     expect(screen.getByTestId(`${testId}-cell-row-1-col-orgTranslationShort`)).toHaveTextContent(ucsbOrganizationsFixtures.threeOrganization[1].orgTranslationShort);
     expect(screen.getByTestId(`${testId}-cell-row-1-col-orgTranslation`)).toHaveTextContent(ucsbOrganizationsFixtures.threeOrganization[1].orgTranslationShort);
-    //expect(screen.getByTestId(`${testId}-cell-row-1-col-inactive`)).toHaveTextContent(ucsbOrganizationsFixtures.threeOrganization[1].inactive);
+    expect(screen.getByTestId(`${testId}-cell-row-1-col-inactive`)).toHaveTextContent(ucsbOrganizationsFixtures.threeOrganization[1].inactive);
+    expect(screen.getByTestId(`${testId}-cell-row-1-col-inactive`)).toHaveTextContent( 'false');
     //This is the problem
     const editButton = screen.getByTestId(`${testId}-cell-row-0-col-Edit-button`);
     expect(editButton).toBeInTheDocument();

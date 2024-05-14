@@ -36,16 +36,16 @@ describe("UCSBDateUtils", () => {
 
         test("It returns the correct params", () => {
             // arrange
-            const cell = { row: { values: { id: 17 } } };
+            const cell = { row: { values: { orgCode: 17 } } };
 
             // act
             const result = cellToAxiosParamsDelete(cell);
 
             // assert
             expect(result).toEqual({
-                url: "/api/organization",
+                url: "/api/UCSBOrganization",
                 method: "DELETE",
-                params: { id: 17 }
+                params: { orgCode: 17 }
             });
         });
 

@@ -7,6 +7,10 @@ import UCSBDatesIndexPage from "main/pages/UCSBDates/UCSBDatesIndexPage";
 import UCSBDatesCreatePage from "main/pages/UCSBDates/UCSBDatesCreatePage";
 import UCSBDatesEditPage from "main/pages/UCSBDates/UCSBDatesEditPage";
 
+import UCSBOrganizationIndexPage from "main/pages/UCSBOrganization/UCSBOrganizationIndexPage";
+import UCSBOrganizationCreatePage from "main/pages/UCSBOrganization/UCSBOrganizationCreatePage";
+import UCSBOrganizationEditPage from "main/pages/UCSBOrganization/UCSBOrganizationEditPage";
+
 import RestaurantIndexPage from "main/pages/Restaurants/RestaurantIndexPage";
 import RestaurantCreatePage from "main/pages/Restaurants/RestaurantCreatePage";
 import RestaurantEditPage from "main/pages/Restaurants/RestaurantEditPage";
@@ -45,6 +49,7 @@ function App() {
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
+              <Route exact path="/UCSBOrganization" element={<UCSBOrganizationIndexPage />} />
               <Route exact path="/helprequest" element={<HelpRequestIndexPage />} />
               <Route exact path="/menuitemreview" element={<MenuItemReviewIndexPage />} />
               <Route exact path="/ucsbdiningcommonsmenuitem" element={<UCSBDiningCommonsMenuItemIndexPage />} />
@@ -57,6 +62,8 @@ function App() {
         {
           hasRole(currentUser, "ROLE_ADMIN") && (
             <>
+              <Route exact path="/UCSBOrganization/edit/:id" element={<UCSBOrganizationEditPage />} />
+              <Route exact path="/UCSBOrganization/create" element={<UCSBOrganizationCreatePage />} />
               <Route exact path="/helprequest/edit/:id" element={<HelpRequestEditPage />} />
               <Route exact path="/helprequest/create" element={<HelpRequestCreatePage />} />
               <Route exact path="/menuitemreview/edit/:id" element={<MenuItemReviewEditPage />} />
@@ -67,11 +74,10 @@ function App() {
               <Route exact path="/articles/create" element={<ArticlesCreatePage />} />
               <Route exact path="/restaurants/edit/:id" element={<RestaurantEditPage />} />
               <Route exact path="/restaurants/create" element={<RestaurantCreatePage />} />
-              <Route exact path="/ucsbdates/edit/:id" element={<UCSBDatesEditPage />} />
-              <Route exact path="/ucsbdates/create" element={<UCSBDatesCreatePage />} />
             </>
           )
         }
+        
       </Routes>
     </BrowserRouter>
   );
