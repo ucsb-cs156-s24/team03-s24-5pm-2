@@ -45,7 +45,7 @@ public class RestaurantWebIT extends WebTestCase {
     }
 
     @Test
-    public void regular_user_cannot_create_ucsbdiningcommonsmenuitem() throws Exception {
+    public void regular_user_cannot_create_restaurant() throws Exception {
         setupUser(false);
 
         page.getByText("Restaurants").click();
