@@ -113,4 +113,3 @@ public class UCSBDiningCommonsMenuItemsController extends ApiController{
         return ucsbDiningCommonsMenuItems;
     }
 }
-
