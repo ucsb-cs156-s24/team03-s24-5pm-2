@@ -77,7 +77,7 @@ public class HelpRequestIT {
                 // arrange
 
         // arrange
-        LocalDateTime ldt1 = LocalDateTime.parse("2022-01-03T00:00:00");
+        LocalDateTime ldt1 = LocalDateTime.parse("2024-01-03T00:00");
 
         HelpRequest request = HelpRequest.builder()
             .id(1L)
@@ -107,7 +107,7 @@ public class HelpRequestIT {
                                 // Arrange
         // arrange
 
-        LocalDateTime ldt1 = LocalDateTime.parse("2022-01-03T00:00:00");
+        LocalDateTime ldt1 = LocalDateTime.parse("2024-01-03T00:00");
 
         HelpRequest helpRequest1 = HelpRequest.builder()
             .id(1L)
@@ -122,7 +122,7 @@ public class HelpRequestIT {
         // act
         MvcResult response = mockMvc.perform(
             post(
-                "/api/helprequest/post?requesterEmail=adrumm&teamId=5pm-5&tableOrBreakoutRoom=table&requestTime=2022-01-03T00:00:00&explanation=helpReq&solved=true")
+                "/api/helprequest/post?requesterEmail=adrumm&teamId=5pm-5&tableOrBreakoutRoom=table&requestTime=2024-01-03T00:00&explanation=helpReq&solved=true")
                 .with(csrf()))
             .andExpect(status().isOk())
             .andReturn();

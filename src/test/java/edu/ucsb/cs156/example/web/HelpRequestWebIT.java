@@ -25,8 +25,8 @@ public class HelpRequestWebIT extends WebTestCase {
         assertThat(page.getByText("Create New Help Request")).isVisible();
         page.getByTestId("HelpRequestForm-requesterEmail").fill("adrumm@ucsb.edu");
         page.getByTestId("HelpRequestForm-teamId").fill("5pm-5");
-        page.getByTestId("HelpRequestForm-tableOrBreakoutRoom").fill("10");
-        page.getByTestId("HelpRequestForm-requestTime").fill("2024-05-07T22:51");
+        page.getByTestId("HelpRequestForm-tableOrBreakoutRoom").fill("table");
+        page.getByTestId("HelpRequestForm-requestTime").fill("2024-01-03T00:00");
         page.getByTestId("HelpRequestForm-explanation").fill("helpReq");
         page.getByTestId("HelpRequestForm-submit").click();
 
@@ -41,14 +41,12 @@ public class HelpRequestWebIT extends WebTestCase {
         assertThat(page.getByTestId("HelpRequestTable-cell-row-0-col-explanation")).hasText("fixed");
 
         page.getByTestId("HelpRequestTable-cell-row-0-col-Delete-button").click();
-
         assertThat(page.getByTestId("HelpRequestForm-cell-row-0-col-requesterEmail")).not().isVisible();
     }
 
     @Test
     public void regular_user_cannot_create_help_request() throws Exception {
         setupUser(false);
-
         page.getByText("Help Request").click();
 
         assertThat(page.getByText("Create Help Request")).not().isVisible();
