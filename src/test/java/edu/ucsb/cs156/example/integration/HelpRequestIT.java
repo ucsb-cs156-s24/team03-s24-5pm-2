@@ -1,6 +1,12 @@
 package edu.ucsb.cs156.example.integration;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.times;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +36,14 @@ import edu.ucsb.cs156.example.repositories.UserRepository;
 import edu.ucsb.cs156.example.services.CurrentUserService;
 import edu.ucsb.cs156.example.services.GrantedAuthoritiesService;
 import edu.ucsb.cs156.example.testconfig.TestConfig;
+
+import edu.ucsb.cs156.example.ControllerTestCase;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Map;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.http.MediaType;
+import java.util.Optional;
 
 
 @ExtendWith(SpringExtension.class)
@@ -63,15 +77,15 @@ public class HelpRequestIT {
                 // arrange
 
         // arrange
-        LocalDateTime ldt1 = LocalDateTime.parse("2024-01-03T00:00");
+        LocalDateTime ldt1 = LocalDateTime.parse("2022-01-03T00:00:00");
 
         HelpRequest request = HelpRequest.builder()
             .id(1L)
             .requesterEmail("adrumm@gmail.com")
             .teamId("5pm-5")
-            .tableOrBreakoutRoom("10")
+            .tableOrBreakoutRoom("table")
             .requestTime(ldt1)
-            .explanation("testingHelpReq")
+            .explanation("helpReq")
             .solved(true)
             .build();
                                 
@@ -93,22 +107,22 @@ public class HelpRequestIT {
                                 // Arrange
         // arrange
 
-        LocalDateTime ldt1 = LocalDateTime.parse("2024-01-03T00:00");
+        LocalDateTime ldt1 = LocalDateTime.parse("2022-01-03T00:00:00");
 
         HelpRequest helpRequest1 = HelpRequest.builder()
             .id(1L)
-            .requesterEmail("adrumm@gmail.com")
+            .requesterEmail("adrumm")
             .teamId("5pm-5")
-            .tableOrBreakoutRoom("10")
+            .tableOrBreakoutRoom("table")
             .requestTime(ldt1)
-            .explanation("testingHelpReq")
+            .explanation("helpReq")
             .solved(true)
             .build();
 
         // act
         MvcResult response = mockMvc.perform(
             post(
-                "/api/helprequest/post?requesterEmail=adrumm&teamId=5pm-5&tableOrBreakoutRoom=10&requestTime=2024-01-03T00:00&explanation=testingHelpReq&solved=true")
+                "/api/helprequest/post?requesterEmail=adrumm&teamId=5pm-5&tableOrBreakoutRoom=table&requestTime=2022-01-03T00:00:00&explanation=helpReq&solved=true")
                 .with(csrf()))
             .andExpect(status().isOk())
             .andReturn();

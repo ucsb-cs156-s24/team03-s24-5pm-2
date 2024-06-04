@@ -26,21 +26,23 @@ public class HelpRequestWebIT extends WebTestCase {
 
         page.getByText("Create HelpRequest").click();
         assertThat(page.getByText("Create New HelpRequest")).isVisible();
-        page.getByTestId("HelpRequestForm-requesterEmail").fill("adrumm@ucsb.edu");
+
+        page.getByTestId("HelpRequestForm-requesterEmail").fill("adrumm@gmail.com");
         page.getByTestId("HelpRequestForm-teamId").fill("5pm-5");
-        page.getByTestId("HelpRequestForm-tableOrBreakoutRoom").fill("10");
-        page.getByTestId("HelpRequestForm-requestTime").fill("2022-01-03T00:00:00");
-        page.getByTestId("HelpRequestForm-explanation").fill("testingcontroller");
+        page.getByTestId("HelpRequestForm-tableOrBreakoutRoom").fill("table");
+        page.getByTestId("HelpRequestForm-requestTime").fill("2022-01-02T12:00");
+        page.getByTestId("HelpRequestForm-explanation").fill("helpReq");
         page.getByTestId("HelpRequestForm-solved").fill("true");
         page.getByTestId("HelpRequestForm-submit").click();
+
         assertThat(page.getByTestId("HelpRequestTable-cell-row-0-col-teamId")).hasText("5pm-5");
 
         page.getByTestId("HelpRequestTable-cell-row-0-col-Edit-button").click();
         assertThat(page.getByText("Edit HelpRequest")).isVisible();
-        page.getByTestId("HelpRequest-teamId").fill("5pm-5new");
+        page.getByTestId("HelpRequest-teamId").fill("new");
         page.getByTestId("HelpRequestForm-submit").click();
 
-        assertThat(page.getByTestId("HelpRequestTable-cell-row-0-col-teamId")).hasText("5pm-5new");
+        assertThat(page.getByTestId("HelpRequestTable-cell-row-0-col-teamId")).hasText("new");
 
         page.getByTestId("HelpRequestTable-cell-row-0-col-Delete-button").click();
 
