@@ -58,6 +58,33 @@ public class MenuItemReviewIT {
         @MockBean
         UserRepository userRepository;
 
+        @WithMockUser(roles = { "USER" })
+        @Test
+        public void test_that_logged_in_user_can_get_by_id_when_the_id_exists() throws Exception {
+                // arrange
+
+                MenuItemReview review1 = MenuItemReview.builder()
+                                .id(1L)
+                                .itemId(3)
+                                .reviewerEmail("fake@gmail.com")
+                                .stars(5)
+                                .dateReviewed(LocalDateTime.parse("2024-05-05T00:00:00"))
+                                .comments("good")
+                                .build();
+                                    
+                menuItemReviewRepository.save(review1);
+
+                // act
+                MvcResult response = mockMvc.perform(get("/api/menuitemreview?id=1"))
+                                .andExpect(status().isOk()).andReturn();
+
+                // assert
+                String expectedJson = mapper.writeValueAsString(review1);
+                String responseString = response.getResponse().getContentAsString();
+                assertEquals(expectedJson, responseString);
+        }
+
+
         @WithMockUser(roles = { "ADMIN", "USER" })
         @Test
         public void an_admin_user_can_post_a_new_menuitemreview() throws Exception {
