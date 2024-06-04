@@ -25,7 +25,7 @@ import static org.springframework.security.test.web.servlet.request.SecurityMock
 
 import java.time.LocalDateTime;
 import edu.ucsb.cs156.example.entities.MenuItemReview;
-import edu.ucsb.cs156.example.repositories.MenuItemReviewRepository;
+import edu.ucsb.cs156.example.repositories.MenuItemReviewRespository;
 import edu.ucsb.cs156.example.repositories.UserRepository;
 import edu.ucsb.cs156.example.services.CurrentUserService;
 import edu.ucsb.cs156.example.services.GrantedAuthoritiesService;
@@ -61,20 +61,20 @@ public class MenuItemReviewIT {
         public void an_admin_user_can_post_a_new_menuitemreview() throws Exception {
                 // arrange
 
-                LocalDateTime time = LocalDateTime.parse("2024-05-05T00:00:00");
+                LocalDateTime dtime = LocalDateTime.parse("2024-05-05T00:00:00");
 
                 MenuItemReview review = MenuItemReview.builder()
                         .id(1)
-                        .itemId(1)
+                        .itemId(3L)
                         .reviewerEmail("fake@gmail.com")
                         .stars(5)
-                        .dateReviewed(time)
+                        .dateReviewed(dtime)
                         .comments("good")
                         .build();
 
                 // act
                 MvcResult response = mockMvc.perform(
-                        post("/api/menuitemreview/post?itemId=1&reviewerEmail=fake@gmail.com&stars=5&dateReviewed=2024-05-05T00:00:00&comments=good")
+                        post("/api/menuitemreview/post?itemId=3&reviewerEmail=fake@gmail.com&stars=5&dateReviewed=2024-05-05T00:00:00&comments=good")
                                 .with(csrf()))
                         .andExpect(status().isOk()).andReturn();
 
