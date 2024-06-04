@@ -21,11 +21,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 
 import java.time.LocalDateTime;
+
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
+
 import edu.ucsb.cs156.example.entities.MenuItemReview;
-import edu.ucsb.cs156.example.repositories.MenuItemReviewRespository;
+import edu.ucsb.cs156.example.repositories.MenuItemReviewRepository;
 import edu.ucsb.cs156.example.repositories.UserRepository;
 import edu.ucsb.cs156.example.services.CurrentUserService;
 import edu.ucsb.cs156.example.services.GrantedAuthoritiesService;
@@ -63,9 +65,9 @@ public class MenuItemReviewIT {
 
                 LocalDateTime dtime = LocalDateTime.parse("2024-05-05T00:00:00");
 
-                MenuItemReview review = MenuItemReview.builder()
-                        .id(1)
-                        .itemId(3L)
+                MenuItemReview review1 = MenuItemReview.builder()
+                        .id(1L)
+                        .itemId(3)
                         .reviewerEmail("fake@gmail.com")
                         .stars(5)
                         .dateReviewed(dtime)
@@ -79,7 +81,7 @@ public class MenuItemReviewIT {
                         .andExpect(status().isOk()).andReturn();
 
                 // assert
-                String expectedJson = mapper.writeValueAsString(review);
+                String expectedJson = mapper.writeValueAsString(review1);
                 String responseString = response.getResponse().getContentAsString();
                 assertEquals(expectedJson, responseString);
         }
