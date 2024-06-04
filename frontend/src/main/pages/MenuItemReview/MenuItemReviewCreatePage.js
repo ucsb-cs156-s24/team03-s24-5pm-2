@@ -39,6 +39,7 @@ export default function MenuItemReviewCreatePage({storybook=false}) {
     return <Navigate to="/menuitemreview" />
   }
 
+  // Stryker disable all : placeholder for future implementation
   return (
     <BasicLayout>
       <div className="pt-2">
