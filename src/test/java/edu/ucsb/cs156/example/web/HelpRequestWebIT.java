@@ -26,7 +26,25 @@ public class HelpRequestWebIT extends WebTestCase {
         page.getByTestId("HelpRequestForm-requesterEmail").fill("adrumm@ucsb.edu");
         page.getByTestId("HelpRequestForm-teamId").fill("5pm-5");
         page.getByTestId("HelpRequestForm-tableOrBreakoutRoom").fill("table");
-        page.getByTestId("HelpRequestForm-requestTime").fill("2024-01-03T00:00");
+        page.getByTestId("HelpRequestForm-requestTime").click();
+        page.keyboard().press("0");
+        page.keyboard().press("1");
+        page.keyboard().press("0");
+        page.keyboard().press("3");
+        page.keyboard().press("2");
+        page.keyboard().press("0");
+        page.keyboard().press("0");
+        page.keyboard().press("3");
+
+        page.keyboard().press("Tab");
+        page.keyboard().press("1");
+        page.keyboard().press("2");
+        page.keyboard().press("0");
+        page.keyboard().press("0");
+
+        page.keyboard().press("A");
+        
+
         page.getByTestId("HelpRequestForm-explanation").fill("helpReq");
         page.getByTestId("HelpRequestForm-submit").click();
 
