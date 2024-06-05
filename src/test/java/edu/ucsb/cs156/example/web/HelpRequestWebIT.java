@@ -21,8 +21,8 @@ public class HelpRequestWebIT extends WebTestCase {
 
         page.getByText("Help Request").click();
 
-        page.getByText("Create Help Request").click();
-        assertThat(page.getByText("Create New Help Request")).isVisible();
+        page.getByText("Create HelpRequest").click();
+        assertThat(page.getByText("Create New HelpRequest")).isVisible();
         page.getByTestId("HelpRequestForm-requesterEmail").fill("adrumm@ucsb.edu");
         page.getByTestId("HelpRequestForm-teamId").fill("5pm-5");
         page.getByTestId("HelpRequestForm-tableOrBreakoutRoom").fill("table");
@@ -44,15 +44,15 @@ public class HelpRequestWebIT extends WebTestCase {
 
         page.keyboard().press("A");
         
-
         page.getByTestId("HelpRequestForm-explanation").fill("helpReq");
+        page.getByTestId("HelpRequestForm-solved").fill("true");
         page.getByTestId("HelpRequestForm-submit").click();
 
         assertThat(page.getByTestId("HelpRequestTable-cell-row-0-col-explanation"))
                 .hasText("helpReq");
 
         page.getByTestId("HelpRequestTable-cell-row-0-col-Edit-button").click();
-        assertThat(page.getByText("Edit Help Request")).isVisible();
+        assertThat(page.getByText("Edit HelpRequest")).isVisible();
         page.getByTestId("HelpRequestForm-explanation").fill("fixed");
         page.getByTestId("HelpRequestForm-submit").click();
 
